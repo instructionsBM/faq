@@ -4,19 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Вывод — БК Олимп</title>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Geologica:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
-    font-family: 'Geologica', sans-serif;
+    font-family: -apple-system, Arial, sans-serif;
     background: #E8E0D8;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
   }
-
   .phone {
     width: 390px;
     min-height: 844px;
@@ -25,7 +21,6 @@
     flex-direction: column;
     box-shadow: 0 20px 80px rgba(0,0,0,0.2);
   }
-
   .status-bar {
     background: #7B1C1C;
     height: 44px;
@@ -35,10 +30,8 @@
     padding: 0 20px;
     font-size: 12px;
     color: #fff;
-    font-family: -apple-system, sans-serif;
     font-weight: 500;
   }
-
   .header {
     background: #7B1C1C;
     padding: 12px 16px 16px;
@@ -46,13 +39,8 @@
     align-items: center;
     gap: 10px;
   }
-  .header-back { color: #fff; font-size: 24px; opacity: 0.9; }
-  .header-title {
-    font-family: 'Unbounded', sans-serif;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-  }
+  .header-back { color: #fff; font-size: 24px; }
+  .header-title { color: #fff; font-size: 18px; font-weight: 600; }
   .header-icon {
     margin-left: auto;
     width: 40px; height: 40px;
@@ -61,21 +49,17 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 17px;
   }
-
   .content {
-    padding: 24px 20px 40px;
+    padding: 24px 20px;
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
-
   .status-text {
     font-size: 14px;
-    color: #666;
+    color: #555;
     line-height: 1.6;
-    font-weight: 300;
   }
-
   .status-badge {
     background: #EAF5EC;
     border: 1.5px solid #B2D9BA;
@@ -84,113 +68,24 @@
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-  .status-badge-text {
     font-size: 15px;
     font-weight: 500;
     color: #3D7A4A;
   }
-
-  /* ───── НОВЫЙ КОМПАКТНЫЙ БЛОК ───── */
-  .tg-banner {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: #F0F7FB;
-    border: 1.5px solid #B0D4EA;
-    border-radius: 12px;
-    padding: 14px 16px;
-    animation: pop 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
-  }
-
-  .tg-logo {
-    width: 40px; height: 40px;
-    background: #229ED9;
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 3px 10px rgba(34,158,217,0.3);
-  }
-  .tg-logo svg { width: 22px; height: 22px; fill: #fff; }
-
   .tg-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
   }
-  .tg-main {
-    font-size: 13px;
-    font-weight: 500;
-    color: #1A1A1A;
-    line-height: 1.4;
-  }
-  .tg-main em {
-    font-style: normal;
-    color: #C0392B;
-    font-weight: 600;
-  }
-  .tg-sub {
-    font-size: 12px;
-    color: #6A8FA0;
-    font-weight: 300;
+  .tg-text a {
+    color: #0088CC;
+    text-decoration: none;
   }
   .tg-hint {
-    font-size: 12px;
-    color: #999;
-    font-weight: 300;
-    line-height: 1.5;
-  }
-
-  .tg-btn {
-    flex-shrink: 0;
-    background: #229ED9;
-    color: #fff;
-    border: none;
-    border-radius: 9px;
-    padding: 10px 14px;
     font-size: 13px;
-    font-weight: 500;
-    font-family: 'Geologica', sans-serif;
-    cursor: pointer;
-    white-space: nowrap;
-    box-shadow: 0 3px 10px rgba(34,158,217,0.3);
-    transition: background 0.15s, transform 0.1s;
-  }
-  .tg-btn:active {
-    background: #1A7FAD;
-    transform: scale(0.97);
-  }
-  /* ───── конец блока ───── */
-
-  /* Dev note */
-  .dev-note {
-    background: #FFFBEA;
-    border: 1.5px dashed #E0B840;
-    border-radius: 8px;
-    padding: 12px 14px;
-    font-size: 11.5px;
-    color: #7A6010;
-    line-height: 1.7;
-  }
-  .dev-note strong {
-    display: block;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    margin-bottom: 4px;
-    font-weight: 700;
-  }
-  code {
-    background: rgba(0,0,0,0.07);
-    padding: 1px 4px;
-    border-radius: 3px;
-    font-size: 11px;
-  }
-
-  @keyframes pop {
-    from { opacity: 0; transform: scale(0.96) translateY(6px); }
-    to   { opacity: 1; transform: scale(1) translateY(0); }
+    color: #999;
+    line-height: 1.5;
+    margin-top: -8px;
   }
 </style>
 </head>
@@ -216,22 +111,16 @@
 
     <div class="status-badge">
       <span>✅</span>
-      <span class="status-badge-text">В обработке к снятию</span>
+      <span>В обработке к снятию</span>
     </div>
 
-    <!-- НОВЫЙ БЛОК -->
-    <div class="tg-banner">
-      <div class="tg-logo">
-        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-      </div>
-      <div class="tg-text">
-        <span class="tg-main">Узнайте в боте, когда деньги придут</span>
-        <span class="tg-sub">Пришлём уведомление сразу после зачисления</span>
-      </div>
-      <button class="tg-btn">Перейти</button>
-    </div>
+    <p class="tg-text">
+      Узнайте, когда деньги поступят — <a href="https://t.me/BromoneyBot">пришлём уведомление о зачислении в Telegram</a>
+    </p>
 
-    <p class="tg-hint">Для авторизации в боте используйте тот же номер телефона, что указан в профиле Olimp</p>
+    <p class="tg-hint">
+      Для авторизации используйте номер телефона из профиля Olimp
+    </p>
 
   </div>
 </div>
